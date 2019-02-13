@@ -122,4 +122,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # ログイン後トップページにリダイレクト
-LOGIN_REDIRECT_URL = '/app'
+LOGIN_REDIRECT_URL = ''

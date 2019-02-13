@@ -5,7 +5,7 @@ from .forms import MemoForm
 from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
 
-@login_required
+@login_required(login_url='/accounts/login/')
 def index(request):
   memos = Memo.objects.all().order_by('-updated_datetime')
   return render(request, 'app/index.html', { 'memos': memos })

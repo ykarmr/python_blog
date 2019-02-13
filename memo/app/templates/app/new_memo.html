@@ -1,0 +1,13 @@
+{% extends 'app/base.html' %}
+{% block content%}
+  <div>
+    <a href="{% url 'app:index' %}">ホームに戻る</a>
+  </div>
+  <!--{% csrf_token %}はセキュリティー対策
+  ないとエラーがでる-->
+  <form action="{% url 'app:new_memo' %}" method="POST">{% csrf_token %}
+    <!-- .as_p <p>タグで囲む -->
+    {{ form.as_p }}
+    <button type="submit" class="btn">保存</button>
+  </form>
+{% endblock %}
